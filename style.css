@@ -1,0 +1,135 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --accent: #1a5fb4;
+  --border: #d8dee4;
+  --card: #f6f8fa;
+  --max: 46rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #9198a1;
+    --accent: #6cb6ff;
+    --border: #30363d;
+    --card: #161b22;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header / nav */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.nav {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.nav-name { font-weight: 600; color: var(--fg); }
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.95rem;
+}
+
+.nav ul a { color: var(--muted); }
+.nav ul a:hover { color: var(--accent); }
+
+/* Main */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+section { margin-bottom: 2.5rem; scroll-margin-top: 4rem; }
+
+h1 { margin: 0 0 0.25rem; font-size: 2rem; }
+h2 {
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.25rem;
+}
+h3 { margin: 0 0 0.25rem; font-size: 1.05rem; }
+
+.hero {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.role { color: var(--muted); margin-top: 0; }
+
+.links { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+/* Project cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .hero { flex-direction: column; align-items: center; text-align: center; }
+  .links { justify-content: center; }
+}
