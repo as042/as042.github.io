@@ -5,6 +5,13 @@
   if (!canvas || !canvas.getContext) return;
   const ctx = canvas.getContext('2d');
 
+  // Pin the canvas behind the page here as well as in style.css, so a stale cached
+  // stylesheet can never leave it in the document flow pushing content off-screen.
+  Object.assign(canvas.style, {
+    position: 'fixed', inset: '0', width: '100%', height: '100%',
+    zIndex: '-1', pointerEvents: 'none',
+  });
+
   const AREA_PER_POINT = 11000; // px^2 of viewport per vertex (lower = denser)
   const MAX_POINTS = 140;
   const LINK_DIST = 150;        // px; vertices closer than this are connected
