@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="bg" aria-hidden="true"></canvas>
   <header class="site-header">
     <nav class="nav">
       <a class="nav-name" href="#top">Andrew C. Seacord</a>
@@ -25,12 +26,17 @@
         <h1>Andrew C. Seacord</h1>
         <p class="role">Undergraduate Researcher, Department of Biochemistry and Molecular Biology<br>The Pennsylvania State University</p>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a short placeholder bio
-          describing your background, current role, and research interests in two or three sentences.
+          Ever since I was a small child, I wanted to know how every little thing in the 
+          universe worked. From the software on my computer, to my own human biology, I
+          wanted to understand it all, and I wanted evidence. In that way, I guess I was
+          kind of born to be a scientist.
         </p>
         <p>
-          Placeholder second paragraph. Mention your advisor, lab, or group here, along with anything
-          else a visitor should know at a glance.
+          I am currently a 4th-year Schreyer Honors student and undergraduate research 
+          assistant at Penn State. In my courses, I study biology at both the molecular
+          and microscopic levels, and in Nekrutenko's lab, I develop the computational 
+          tools and workflows with which scientists research these topics. I get the best 
+          of both worlds!
         </p>
         <p class="links">
           <a href="/slides/">Slides</a>
@@ -43,11 +49,11 @@
 
     <section id="research">
       <h2>Research Interests</h2>
-      <p>Placeholder overview of your research program in a few sentences.</p>
+      <p>I am committed to the development of open-source, accessible science, and in the Nekrutenko Lab, I pursue this goal via the following:</p>
       <ul>
-        <li><strong>Research area one:</strong> one-line placeholder description.</li>
-        <li><strong>Research area two:</strong> one-line placeholder description.</li>
-        <li><strong>Research area three:</strong> one-line placeholder description.</li>
+        <li><strong>SRA metadata enrichment:</strong> the Sequence Read Archive is far too large to clean by hand but not too large for LLMs.</li>
+        <li><strong>Planetary genomic surveillance:</strong> why analyze one sequence at a time when we can monitor almost the entire planet?</li>
+        <li><strong>Pathogen selection analysis:</strong> using novel, model-based software, we are studying rapidly-diverging new pathogens.</li>
       </ul>
     </section>
 
@@ -56,16 +62,16 @@
       <p>All repositories: <a href="https://github.com/as042?tab=repositories">github.com/as042?tab=repositories</a></p>
       <div class="cards">
         <article class="card">
-          <h3><a href="#">Project One</a></h3>
-          <p>Placeholder description of a project, tool, or software package.</p>
+          <h3><a href="https://github.com/nekrut/disassembler">Disassembler</a></h3>
+          <p>Streams Logan cDBG unitigs from S3, anchors a query coding sequence, and walks the local subgraph to reconstruct intra-host coding haplotypes.</p>
         </article>
         <article class="card">
-          <h3><a href="#">Project Two</a></h3>
-          <p>Placeholder description of a project, tool, or software package.</p>
+          <h3><a href="https://github.com/as042/phylogeny-project">phylogeny-project</a></h3>
+          <p>A lightweight Rust library that builds phylogenetic trees from distance matrices with neighbor joining and renders them to Newick, SVG, or PNG.</p>
         </article>
         <article class="card">
-          <h3><a href="#">Project Three</a></h3>
-          <p>Placeholder description of a project, tool, or software package.</p>
+          <h3><a href="https://github.com/as042/turing-machine-sim">turing-machine-sim</a></h3>
+          <p>A dependency-free Rust Turing machine simulator, with a brute-force experiment that approximates Chaitin's halting probability.</p>
         </article>
       </div>
     </section>
@@ -83,5 +89,6 @@
   <footer class="site-footer">
     <p>&copy; 2026 Andrew Seacord. Last updated October 2026.</p>
   </footer>
+  <script src="bg.js" defer></script>
 </body>
 </html>
